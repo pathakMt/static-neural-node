@@ -3,7 +3,7 @@
 #include <array>
 using namespace std;
 
-//namespace nn makes sure the code inside of it is exlusive to it's scope. can be accessed with nn::
+//namespace nn makes sure the code inside of it is exclusive to its scope, and most importantly prevents name collisions. can be accessed with nn::
 namespace nn {
 	template <typename T, size_t Rows, size_t Cols>
 	class matrix final{
@@ -67,7 +67,7 @@ namespace nn {
 		return result;
 	}
 
-	//scalar version
+	//scalar activation function
 	template <typename T>
 	[[nodiscard]] constexpr T relu(T x) noexcept {
 		if (x > T{}) {
@@ -78,7 +78,7 @@ namespace nn {
 		}
 	}
 
-	//matrix version
+	//matrix  activation function
 	template<typename T, size_t Rows, size_t Cols>
 	[[nodiscard]] constexpr matrix <T, Rows, Cols> relu(const matrix<T, Rows, Cols> &m) noexcept {
 		matrix<T, Rows, Cols> result{};
