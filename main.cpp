@@ -31,14 +31,17 @@ constexpr bool test_add() noexcept
     const auto c = a + b;
 
     return (c(0U, 0U) == 11.0F) && (c(0U, 1U) == 22.0F)
-        && (c(1U, 0U) == 33.0F) && (c(1U, 1U) == 44.0F);
+       && (c(1U, 0U) == 33.0F) && (c(1U, 1U) == 44.0F);
 }
+
+
 
 
 int main() {
   
    static_assert(test_multiply(), "matrix multiply is wrong");
    static_assert(test_add(), "matrix add is wrong");
+	
 }
 
 

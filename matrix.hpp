@@ -67,7 +67,7 @@ namespace nn {
 		return result;
 	}
 
-	
+	//scalar version
 	template <typename T>
 	[[nodiscard]] constexpr T relu(T x) noexcept {
 		if (x > T{}) {
@@ -76,5 +76,17 @@ namespace nn {
 		else {
 			return T{};
 		}
+	}
+
+	//matrix version
+	template<typename T, size_t Rows, size_t Cols>
+	[[nodiscard]] constexpr matrix <T, Rows, Cols> relu(const matrix<T, Rows, Cols> &m) noexcept {
+		matrix<T, Rows, Cols> result{};
+		for (size_t i = 0; i < Rows; ++i) {
+			for (size_t j = 0; j < Cols; ++j) {
+				result(i, j) = relu(m(i, j));
+			}
+		}
+		return result;
 	}
 }
