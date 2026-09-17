@@ -66,4 +66,15 @@ namespace nn {
 		}
 		return result;
 	}
+
+	
+	template <typename T>
+	[[nodiscard]] constexpr T relu(T x) noexcept {
+		if (x > T{}) {
+			return x;
+		}
+		else {
+			return T{};
+		}
+	}
 }

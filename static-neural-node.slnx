@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="static-neural-node.vcxproj" />
+  <Project Path="static-neural-node.vcxproj" Id="8344e171-1dbd-411d-9d27-cba82fc54e91" />
 </Solution>
